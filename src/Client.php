@@ -85,7 +85,7 @@ class Client
                 $guzzle = new \GuzzleHttp\Client($options['guzzle']);
             }
 
-            $client = new \Nexmo\Client\GuzzleStreamAdapter($guzzle);
+            $client = new \Http\Adapter\Guzzle6\Client($guzzle);
         }
 
         $this->setHttpClient($client);
@@ -340,13 +340,7 @@ class Client
      */
     public function stream($url, array $params = [])
     {
-        if (!($this->client instanceof \Nexmo\StreamingInterface)) {
-            throw new \RuntimeException('Client does not support streaming');
-        }
-
-        return $this->client->stream(
-            $this->get($url, $params)
-        );
+        return $this->get($url, $params)->getBody()->detach();
     }
 
     /**
