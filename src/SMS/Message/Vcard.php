@@ -26,7 +26,7 @@ class Vcard extends OutboundMessage
         $data = ['vcard' => $this->getCard()];
         $data = $this->appendUniversalOptions($data);
 
-        return $data;
+        return $this->appendUniversalOptions($data);
     }
 
     public function getCard() : string
