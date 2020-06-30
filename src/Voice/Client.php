@@ -65,9 +65,7 @@ class Client implements APIClient
         $event['to'] = $call->getTo()->getId();
         $event['from'] = $call->getFrom()->getId();
         $event['timestamp'] = (new \DateTimeImmutable("now", new \DateTimeZone("UTC")))->format(DATE_ATOM);
-
-        $event = new Event($event);
-        return $event;
+        return new Event($event);
     }
 
     public function earmuffCall(string $callId) : void
@@ -78,9 +76,8 @@ class Client implements APIClient
     public function get(string $callId) : Call
     {
         $data = $this->api->get($callId);
-        $call = (new CallFactory())->create($data);
 
-        return $call;
+        return (new CallFactory())->create($data);
     }
 
     public function hangupCall(string $callId) : void
@@ -103,28 +100,24 @@ class Client implements APIClient
     /**
      * @return array{uuid: string, message: string}
      */
-    public function playDTMF(string $callId, string $digits) : array
+    public function playDTMF(string $callId, string $digits): array
     {
-        $response = $this->api->update($callId . '/dtmf', [
+        return $this->api->update($callId . '/dtmf', [
             'digits' => $digits
         ]);
-
-        return $response;
     }
 
     /**
      * @return array{uuid: string, message: string}
      */
-    public function playTTS(string $callId, Talk $action) : array
+    public function playTTS(string $callId, Talk $action): array
     {
-        $response = $this->api->update($callId . '/talk', [
+        return $this->api->update($callId . '/talk', [
             'text' => $action->getText(),
             'voice_name' => $action->getVoiceName(),
             'loop' => (string) $action->getLoop(),
             'level' => (string) $action->getLevel(),
         ]);
-
-        return $response;
     }
 
     public function search(FilterInterface $filter = null) : IterableAPICollection
