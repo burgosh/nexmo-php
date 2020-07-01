@@ -10,7 +10,7 @@ namespace NexmoTest\Conversion;
 
 use Prophecy\Argument;
 use Nexmo\Conversion\Client;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Client\APIResource;
 use PHPUnit\Framework\TestCase;
 use NexmoTest\Psr7AssertionTrait;

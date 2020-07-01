@@ -17,7 +17,7 @@ use Nexmo\Account\Balance;
 use Nexmo\Account\Exception\NotFoundException;
 use Nexmo\Account\SmsPrice;
 use Nexmo\Client\Exception;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Account\VoicePrice;
 use Nexmo\Client\APIResource;
 use Nexmo\Account\PrefixPrice;

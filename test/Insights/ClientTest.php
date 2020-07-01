@@ -13,7 +13,7 @@ use Nexmo\Insights\Basic;
 use Nexmo\Insights\Client;
 use Nexmo\Insights\Advanced;
 use Nexmo\Insights\Standard;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Client\APIResource;
 use PHPUnit\Framework\TestCase;
 use Nexmo\Insights\AdvancedCnam;

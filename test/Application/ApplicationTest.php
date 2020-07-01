@@ -8,7 +8,7 @@
 
 namespace NexmoTest\Application;
 
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Application\Webhook;
 use PHPUnit\Framework\TestCase;
 use Nexmo\Application\RtcConfig;

@@ -6,7 +6,7 @@ use Nexmo\Voice\Call;
 use Prophecy\Argument;
 use Nexmo\Voice\NCCO\NCCO;
 use Nexmo\Voice\CallAction;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Client\APIResource;
 use Nexmo\Client\Exception\Request;
 use Nexmo\Voice\Endpoint\Phone;

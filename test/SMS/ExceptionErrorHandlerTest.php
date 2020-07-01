@@ -7,9 +7,9 @@ use Nexmo\Client\Exception\Request as ExceptionRequest;
 use Nexmo\Client\Exception\ThrottleException;
 use Nexmo\SMS\ExceptionErrorHandler;
 use PHPUnit\Framework\TestCase;
-use Zend\Diactoros\Request;
-use Zend\Diactoros\Response\JsonResponse;
-use Zend\Diactoros\ResponseFactory;
+use Laminas\Diactoros\Request;
+use Laminas\Diactoros\Response\JsonResponse;
+use Laminas\Diactoros\ResponseFactory;
 
 class ExceptionErrorHandlerTest extends TestCase
 {

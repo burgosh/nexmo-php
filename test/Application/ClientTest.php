@@ -9,8 +9,8 @@
 namespace NexmoTest\Application;
 
 use Prophecy\Argument;
-use Zend\Diactoros\Request;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Request;
+use Laminas\Diactoros\Response;
 use Nexmo\Application\Client;
 use Nexmo\Client\APIResource;
 use Nexmo\Application\Hydrator;

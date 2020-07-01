@@ -12,7 +12,7 @@ use Exception;
 use Prophecy\Argument;
 use Nexmo\Verify\Client;
 use Nexmo\Verify\Request;
-use Zend\Diactoros\Response;
+use Laminas\Diactoros\Response;
 use Nexmo\Client\APIResource;
 use Nexmo\Client\Exception\Request as ExceptionRequest;
 use Nexmo\Client\Exception\Server;
