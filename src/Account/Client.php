@@ -55,7 +55,7 @@ class Client implements APIClient
             new KeyValueFilter(['prefix' => $prefix]),
             '/account/get-prefix-pricing/outbound'
         );
-        $data->getApiResource()->setCollectionName('prices');
+        $data->getApiResource()->setCollectionName('countries');
         
         $prices = [];
         foreach ($data as $priceData) {
