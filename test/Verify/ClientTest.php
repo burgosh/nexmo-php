@@ -121,6 +121,34 @@ class ClientTest extends TestCase
         $this->assertSame($success, @$verification->getResponse());
     }
 
+    /**
+     * @dataProvider optionalValues
+     */
+    public function testCanSetRequestOptionalValues($value, $setter, $param, $normal = null)
+    {
+        if (is_null($normal)) {
+            $normal = $value;
+        }
+
+        $verification = new Request('14845551212', 'Test Verify Params');
+        @$verification->$setter($value);
+        $params = $verification->toArray();
+        $this->assertEquals($normal, $params[$param]);
+    }
+
+    public function optionalValues()
+    {
+        return [
+            ['us', 'setCountry', 'country'],
+            ['16105551212', 'setSenderId', 'sender_id'],
+            ['6', 'setCodeLength', 'code_length'],
+            ['en-us', 'setLocale', 'lg'],
+            ['400', 'setPinExpiry', 'pin_expiry'],
+            ['200', 'setNextEventWait', 'next_event_wait'],
+            ['5', 'setWorkflowId', 'workflow_id'],
+        ];
+    }
+
     public function testCanStartVerification()
     {
         $success = $this->setupClientForStart('start');
